@@ -1,5 +1,5 @@
 <?php
-require 'includes/connexion.php';
+require __DIR__ . '/../includes/connexion.php';
 
 $pdo = getConnexion();
 
@@ -13,7 +13,7 @@ $formation = $stmt->fetch();
 
 // Si la formation n'existe pas, rediriger
 if (!$formation) {
-    header('Location: formations.php');
+    header('Location: /index.php?route=formations');
     exit();
 }
 ?>
@@ -60,7 +60,7 @@ if (!$formation) {
 </head>
 <body>
 
-<a class="retour" href="formations.php">← Retour aux formations</a>
+<a class="retour" href="/index.php?route=formations">← Retour aux formations</a>
 
 <h1>Inscription à la formation</h1>
 
@@ -73,7 +73,7 @@ if (!$formation) {
 </div>
 
 <!-- Formulaire d'inscription -->
-<form action="traitement.php" method="POST">
+<form action="/test/traitement.php" method="POST">
 
     <!-- ID de la formation (caché) -->
     <input type="hidden" name="formation_id" value="<?= $formation['id'] ?>">

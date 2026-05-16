@@ -14,7 +14,7 @@ echo "Longueur : " . strlen("Bonjour Ranya!") . "<br>";
 echo "Position de 'Ranya' : " . strpos("Bonjour Ranya!", "Ranya") . "<br>";
 echo "Remplacement : " . str_replace("Ranya", "Mezzi", "Bonjour Ranya!") . "<br>";
 echo "Minuscule : " . strtolower("BONJOUR RANYA!") . "<br>"; 
-echo "Majuscule : " . strtoupper("bonjour ranya!") . "<br>"; 
+echo "Majuscule : " . strtoupper("bonjour ranya!") . "<br>";
 
 $chaine = " Bonjour Ranya!   ";
 echo "Après trim : '" . trim($chaine) . "'<br><br>";

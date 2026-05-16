@@ -1,6 +1,6 @@
 <?php
 // Ce fichier récupère les formations depuis la BD et les affiche.
-require 'includes/connexion.php';
+require __DIR__ . '/../includes/connexion.php';
 
 $pdo = getConnexion();
 
@@ -51,10 +51,10 @@ $formations = $stmt->fetchAll();
 
 <!-- Liens de filtrage -->
 <div class="filtres">
-    <a href="formations.php">Toutes les formations</a> |
-    <a href="formations.php?niveau=Débutant">Débutant</a> |
-    <a href="formations.php?niveau=Intermédiaire">Intermédiaire</a> |
-    <a href="formations.php?niveau=Avancé">Avancé</a>
+    <a href="/index.php?route=formations">Toutes les formations</a> |
+    <a href="/index.php?route=formations&niveau=Débutant">Débutant</a> |
+    <a href="/index.php?route=formations&niveau=Intermédiaire">Intermédiaire</a> |
+    <a href="/index.php?route=formations&niveau=Avancé">Avancé</a>
 </div>
 
 <?php if (empty($formations)): ?>
@@ -71,7 +71,7 @@ $formations = $stmt->fetchAll();
             <p class="prix">
                 <?= number_format($f['prix'], 2, ',', ' ') ?> DT
             </p>
-            <a href="inscription.php?formation_id=<?= $f['id'] ?>">
+            <a href="/index.php?route=inscription&formation_id=<?= $f['id'] ?>">
                 S'inscrire
             </a>
         </div>

@@ -1,7 +1,7 @@
 <?php
-require_once 'includes/connexion.php';
-require_once 'includes/validation.php';
-require_once 'includes/fonctions.php';
+require_once __DIR__ . '/../includes/connexion.php';
+require_once __DIR__ . '/../includes/validation.php';
+require_once __DIR__ . '/../includes/fonctions.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $id = $pdo->lastInsertId();
 
-        header('Location: paiement.php?id=' . $id);
+        header('Location: /test/paiement.php?id=' . $id);
         exit();
     }
 }

@@ -1,5 +1,5 @@
 <?php
-require 'includes/connexion.php';
+require __DIR__ . '/../includes/connexion.php';
 
 $pdo = getConnexion();
 
@@ -17,7 +17,7 @@ $stmt->execute([$id]);
 $inscription = $stmt->fetch();
 
 if (!$inscription) {
-    header('Location: formations.php');
+    header('Location: /index.php?route=formations');
     exit();
 }
 ?>
@@ -65,7 +65,7 @@ if (!$inscription) {
     <div class="detail"><span class="label">Prix :</span> <span class="prix"><?= number_format($inscription['prix'], 2, ',', ' ') ?> DT</span></div>
 </div>
 
-<a href="formations.php">← Retour aux formations</a>
+<a href="/index.php?route=formations">← Retour aux formations</a>
 
 </body>
 </html>
